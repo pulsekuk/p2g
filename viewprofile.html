@@ -1,164 +1,0 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>View Profile</title>
-<style type="text/css">
-<!--
-body {
-	margin-left: 0px;
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-	background:url(images/bg.jpg);
-}
--->
-</style>
-<link rel="stylesheet" href="style.css" type="text/css" />
-<style type="text/css">
-<!--
-#apDiv3 {
-	position:absolute;
-	width:100%;
-	height:45px;
-	z-index:2;
-	left: 0px;
-	top: 88px;
-	border-radius:30px;
-		border-top-right-radius: 0px;
-border-top-left-radius:0px;
-	background:#2a98c2;
- /* IE 10 */
- 
-}
-#apDiv4 {
-	position:absolute;
-	width:100%;
-	height:250px;
-	z-index:3;
-	left:0;
-	top:160px;
-}
--->
-</style><script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-</head>
-
-<body>
-<div id="apDiv1"><table width="100%" border="0" cellspacing="0" cellpadding="0" height="90" align="center">
-  <tr>
-    <td valign="middle"><img src="images/logo.png" width="auto"></td>
-    <td valign="top"><div align="right"><a href="#"><img src="images/back-homepage.png" width="auto" border="0"></a><a href="#"><img src="images/logout-btn.png" border="0"></a></div></td>
-  </tr>
-  
-</table>
-</div>
-<div align="center" style="margin-top:12%; width:auto;">
-  <div id="apDiv3">
-    <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
-      <tr>
-        <td class="text4" align="center"><a href="MyBets.html" class="text5">My Bets</a></td>
-        <td class="text4" align="center"><a href="PaymentHistory.html" class="text5">My Money</a></td>
-        <td class="text8" align="center"><a href="viewprofile.html" class="text5">My Profile</a></td>
-      </tr>
-    </table>
-  </div>
-  <div id="apDiv4">
-    <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="a5">
-      <tr>
-        <td colspan="5">&nbsp;</td>
-      </tr>
-      <tr>
-        <td width="1%" class="text6">&nbsp;</td>
-        <td width="95%" colspan="4" valign="middle" class="text6"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td width="60%">View Profile</td>
-              <td width="15%"><div align="right"></div></td>
-              <td width="20%"><div align="center"><a href="modifyprofile.html"><img src="images/modify-btn.png" width="178" height="43" border="0"></a></div></td>
-            </tr>
-        </table></td>
-      </tr>
-      <tr>
-        <td colspan="5" height="13"></td>
-      </tr>
-      <tr>
-        <td colspan="5" class="a6"><table width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
-            <tr>
-              <td class="text7">&nbsp;</td>
-              <td>&nbsp;</td>
-              <td class="text7">&nbsp;</td>
-              <td class="text1">&nbsp;</td>
-              <td class="text7">&nbsp;</td>
-            </tr>
-            <tr>
-              <td class="text7">&nbsp;</td>
-              <td>&nbsp;</td>
-              <td class="text7">&nbsp;</td>
-              <td class="text1">&nbsp;</td>
-              <td class="text7">&nbsp;</td>
-            </tr>
-            <tr>
-              <td width="31%" height="25" class="text7">First Name :</td>
-              <td width="3%">&nbsp;</td>
-              <td width="31%" class="text7">Lastname :</td>
-              <td width="3%" class="text1">&nbsp;</td>
-              <td width="32%" class="text7">Email :</td>
-            </tr>
-            <tr>
-              <td class="text9" id="fname"> </td>
-              <td class="text2">&nbsp;</td>
-              <td><span class="text9" id="lname"></span></td>
-              <td>&nbsp;</td>
-              <td class="text9" id="email"></td>
-            </tr>
-            <tr>
-              <td height="35">&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-            </tr>
-            <tr>
-              <td height="25" class="text7">Phone :</td>
-              <td>&nbsp;</td>
-              <td colspan="3" class="text7">Balance :</td>
-            </tr>
-            <tr>
-              <td><span class="text9" id="phone"> </span></td>
-              <td class="text2">&nbsp;</td>
-              <td colspan="3"><span class="text9" id="balance"> </span></td>
-            </tr>
-            <tr>
-              <td height="35">&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-            </tr>
-            <tr>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-            </tr>
-            <tr>
-              <td class="text1">&nbsp;</td>
-              <td>&nbsp;</td>
-              <td class="text1">&nbsp;</td>
-              <td class="text1">&nbsp;</td>
-              <td class="text1">&nbsp;</td>
-            </tr>
-            <tr>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-            </tr>
-        </table></td>
-      </tr>
-    </table>
-  </div>
-</div><script>$(document).ready(function(){$.ajax({type:"post",url:"viewprofile.php",contentType: "json",data:{},success:function(response){$("#fname").html(response["FirstName"]);$("#lname").html(response["LastName"]);$("#phone").html(response["PhoneNumber"]);$("#email").html(response["EmailId"]);$("#balance").html(response["Balance"]);}, error: function (xhr, ajaxOptions, thrownError) {alert("error : "+xhr.status+" "+thrownError);      }});});</script>
-</body>
-</html>
